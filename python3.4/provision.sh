@@ -55,4 +55,4 @@ make -s install
 # Clean up
 # ===================================================================
 rm -rf /tmp/*
-rm -r /root/.cache
+rm -rf /root/.cache

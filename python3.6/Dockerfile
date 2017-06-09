@@ -1,4 +1,4 @@
-FROM python:2.7-alpine3.6
+FROM python:3.6-alpine3.6
 
 ADD provision.sh /tmp/provision.sh
 RUN /tmp/provision.sh

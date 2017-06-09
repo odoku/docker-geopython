@@ -5,10 +5,15 @@ set -e # fail on any error
 
 # Versions
 # ===================================================================
-GEOS_VERSION=3.4.2
-PROJ_VERSION=4.9.2
-PROJ_DATUMGRID_VERSION=1.5
-GDAL_VERSION=1.11.2
+GEOS_VERSION=3.6.1
+PROJ_VERSION=4.9.3
+PROJ_DATUMGRID_VERSION=1.6
+GDAL_VERSION=2.2.0
+
+
+# Install libraries
+# ===================================================================
+apk add --no-cache linux-headers build-base
 
 
 # Install geos
@@ -26,10 +31,10 @@ make -s install
 # ===================================================================
 cd /tmp
 wget http://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz
-wget http://download.osgeo.org/proj/proj-datumgrid-${PROJ_DATUMGRID_VERSION}.tar.gz
+wget http://download.osgeo.org/proj/proj-datumgrid-${PROJ_DATUMGRID_VERSION}.zip
 tar xzf proj-${PROJ_VERSION}.tar.gz
 cd proj-${PROJ_VERSION}/nad
-tar xzf ../../proj-datumgrid-${PROJ_DATUMGRID_VERSION}.tar.gz
+unzip ../../proj-datumgrid-${PROJ_DATUMGRID_VERSION}.tar.gz
 cd ..
 ./configure --enable-silent-rules
 make -s

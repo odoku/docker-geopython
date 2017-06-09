@@ -34,7 +34,7 @@ wget http://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz
 wget http://download.osgeo.org/proj/proj-datumgrid-${PROJ_DATUMGRID_VERSION}.zip
 tar xzf proj-${PROJ_VERSION}.tar.gz
 cd proj-${PROJ_VERSION}/nad
-unzip ../../proj-datumgrid-${PROJ_DATUMGRID_VERSION}.tar.gz
+unzip ../../proj-datumgrid-${PROJ_DATUMGRID_VERSION}.zip
 cd ..
 ./configure --enable-silent-rules
 make -s
